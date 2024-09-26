@@ -25,6 +25,10 @@ class SignInController extends GetxController {
   // variable for active button
   RxBool activeBtn = false.obs;
 
+  checkActiveBtn() {
+    activeBtn.value = formSignIn.currentState!.validate();
+  }
+
   // Button function
   // sign in
   void signIn() {}
