@@ -24,14 +24,23 @@ class SignInController extends GetxController {
 
   // variable for active button
   RxBool activeBtn = false.obs;
-
+  // function for change activeBtn value
   checkActiveBtn() {
     activeBtn.value = formSignIn.currentState!.validate();
   }
 
+  // variable loading
+  RxBool loading = false.obs;
+
   // Button function
   // sign in
-  void signIn() {}
+  void signIn() {
+    loading.value = true;
+    Future.delayed(const Duration(seconds: 2), () {
+      loading.value = false;
+    });
+  }
+
   // sign in by google
   void signInGoogle() {}
   // sign in by facebook
