@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sore_book/routes/app_route.dart';
+import 'package:sore_book/utils/constants/colors.dart';
 import 'package:yo_package/yo_package.dart';
 
 void main() {
@@ -18,21 +19,20 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(),
       darkTheme: ThemeData(
         appBarTheme: YoAppbar.dark(
-          colors: YoColors.darkGreen,
+          colors: colorModel,
           textTheme: GoogleFonts.aBeeZeeTextTheme(),
         ),
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: YoColors.darkGreen.primary),
-        scaffoldBackgroundColor: YoColors.darkGreen.background,
-        elevatedButtonTheme: YoButton.dark(colors: YoColors.darkGreen),
-        outlinedButtonTheme: YoButton.darkOutline(colors: YoColors.darkGreen),
+        colorScheme: ColorScheme.fromSeed(seedColor: colorModel.primary),
+        scaffoldBackgroundColor: colorModel.background,
+        elevatedButtonTheme: YoButton.dark(colors: colorModel),
+        outlinedButtonTheme: YoButton.darkOutline(colors: colorModel),
         inputDecorationTheme: YoTextField.darkOutlined(
-          colors: YoColors.darkGreen,
+          colors: colorModel,
         ),
-        cardTheme: YoCard.dark(colors: YoColors.darkGreen),
+        cardTheme: YoCard.dark(colors: colorModel),
         textTheme: YoTextTheme.style(
           textTheme: GoogleFonts.aBeeZeeTextTheme(),
-          colors: YoColors.darkGreen,
+          colors: colorModel,
         ),
       ),
       getPages: AppPages.pages,
