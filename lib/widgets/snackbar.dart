@@ -6,8 +6,10 @@ import 'package:sore_book/utils/constants/colors.dart';
 
 class YoSnackbar {
   YoSnackbar._();
-  static void show(
-          {required String message, SnackBarType type = SnackBarType.Info}) =>
+  static void show({
+    required String message,
+    SnackBarType type = SnackBarType.Success,
+  }) =>
       Get.rawSnackbar(
         backgroundColor: snackbarBackgroundColor(type: type),
         message: message,
