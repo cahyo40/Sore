@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class ForgotPasswordController extends GetxController {
   // Global key for form
-  GlobalKey<FormState> formSignIn = GlobalKey<FormState>();
+  GlobalKey<FormState> formForgotPassword = GlobalKey<FormState>();
   // variable texteditingcontroller
   TextEditingController email = TextEditingController();
 
@@ -11,7 +11,7 @@ class ForgotPasswordController extends GetxController {
   RxBool activeBtn = false.obs;
   // function for change activeBtn value
   checkActiveBtn() {
-    activeBtn.value = formSignIn.currentState!.validate();
+    activeBtn.value = formForgotPassword.currentState!.validate();
   }
 
   // variable loading
