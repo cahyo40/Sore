@@ -80,7 +80,7 @@ class SignInView extends GetView<SignInController> {
               Align(
                 alignment: Alignment.centerRight,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () => controller.forgotPassword(),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 8, 0, 8),
                     child: Text(
@@ -142,15 +142,15 @@ class SignInView extends GetView<SignInController> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.signInGoogle(),
                     child: Brand(Brands.google, size: 24),
                   ),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.signInFacebook(),
                     child: Brand(Brands.facebook, size: 24),
                   ),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.signInApple(),
                     child: Brand(Brands.apple_logo, size: 24),
                   ),
                 ],
@@ -165,12 +165,14 @@ class SignInView extends GetView<SignInController> {
                       style: Get.textTheme.bodyMedium,
                     ),
                     TextSpan(
-                        text: "Sign Up",
-                        style: Get.textTheme.bodyMedium!.copyWith(
-                          color: secondaryColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        recognizer: TapGestureRecognizer()..onTap = () {}),
+                      text: "Sign Up",
+                      style: Get.textTheme.bodyMedium!.copyWith(
+                        color: secondaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => controller.signUp(),
+                    ),
                   ],
                 ),
               ),
