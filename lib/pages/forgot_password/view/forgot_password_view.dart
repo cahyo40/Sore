@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:sore_book/pages/forgot_password/controller/forgot_password_controller.dart';
-import 'package:sore_book/widgets/back_button.dart';
 import 'package:yo_package/yo_package.dart';
 
 import '../../../utils/constants/images.dart';
-import '../../../utils/validation/email.dart';
+import '../../../widgets/back_button.dart';
 import '../../../widgets/loading.dart';
+import '../controller/forgot_password_controller.dart';
 
 class ForgotPasswordView extends GetView<ForgotPasswordController> {
   const ForgotPasswordView({super.key});
@@ -53,7 +52,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
               Text("Email Address", style: Get.textTheme.bodyMedium),
               YoSpace.height(),
               TextFormField(
-                validator: (value) => EmailValidator.validate(value),
+                validator: (value) => YoValidation.email(value),
                 controller: controller.email,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(

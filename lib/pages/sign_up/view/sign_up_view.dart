@@ -2,15 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:sore_book/pages/sign_up/controller/sign_up_controller.dart';
-import 'package:sore_book/utils/validation/required.dart';
 import 'package:yo_package/yo_package.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/images.dart';
-import '../../../utils/validation/email.dart';
-import '../../../utils/validation/password.dart';
 import '../../../widgets/loading.dart';
+import '../controller/sign_up_controller.dart';
 
 class SignUpView extends GetView<SignUpController> {
   const SignUpView({super.key});
@@ -50,8 +47,7 @@ class SignUpView extends GetView<SignUpController> {
               Text("Fullname", style: Get.textTheme.bodyMedium),
               YoSpace.height(),
               TextFormField(
-                validator: (value) =>
-                    RequiredValidator.validate(value, "Fullname"),
+                validator: (value) => YoValidation.required(value, "Fullname"),
                 // controller: controller.email,
 
                 decoration: const InputDecoration(
@@ -64,7 +60,7 @@ class SignUpView extends GetView<SignUpController> {
               Text("Email Address", style: Get.textTheme.bodyMedium),
               YoSpace.height(),
               TextFormField(
-                validator: (value) => EmailValidator.validate(value),
+                validator: (value) => YoValidation.email(value),
                 // controller: controller.email,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
@@ -79,8 +75,7 @@ class SignUpView extends GetView<SignUpController> {
               Obx(
                 () => TextFormField(
                   controller: controller.password,
-                  validator: (value) =>
-                      PasswordValidator.validatePassword(value),
+                  validator: (value) => YoValidation.password(value),
                   obscureText: controller.obsecureText.value,
                   decoration: InputDecoration(
                     hintText: "Enter your secure password",
@@ -103,9 +98,8 @@ class SignUpView extends GetView<SignUpController> {
               Obx(
                 () => TextFormField(
                   controller: controller.confirmPassword,
-                  validator: (value) =>
-                      PasswordValidator.validateConfirmPassword(
-                          value, controller.password.text),
+                  validator: (value) => YoValidation.confirmPassword(
+                      value, controller.password.text),
                   obscureText: controller.obsecureTextC.value,
                   decoration: InputDecoration(
                     hintText: "Confirm your password",
