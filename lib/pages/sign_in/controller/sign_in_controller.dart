@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sore_book/routes/app_route.dart';
+import 'package:sore_book/widgets/snackbar.dart';
 
 class SignInController extends GetxController {
   // Global key for form
@@ -54,5 +55,12 @@ class SignInController extends GetxController {
   }
 
   // forgot password
-  void forgotPassword() {}
+  void forgotPassword() async {
+    final result = await Get.toNamed(AppRoute.FORGOTPASSWORD);
+    if (result == true) {
+      YoSnackbar.show(
+        message: "Check your email",
+      );
+    }
+  }
 }
