@@ -6,4 +6,5 @@ abstract class AppRoute {
   static const HOME = '/home';
   static const SIGNIN = '/sign-in';
   static const SPLASHSCREEN = '/splashscreen';
+  static const SIGNUP = '/sign-up';
 }
