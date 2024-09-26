@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../pages/forgot_password/controller/forgot_password_binding.dart';
+import '../pages/forgot_password/view/forgot_password_view.dart';
 import '../pages/home/controller/home_binding.dart';
 import '../pages/home/view/home_view.dart';
 import '../pages/sign_in/controller/sign_in_binding.dart';
@@ -36,6 +38,12 @@ abstract class AppPages {
       page: () => const SignUpView(),
       binding: SignUpBinding(),
       title: "Sign Up",
+    ),
+    GetPage(
+      name: AppRoute.FORGOTPASSWORD,
+      page: () => const ForgotPasswordView(),
+      binding: ForgotPasswordBinding(),
+      title: "Forgot Password",
     ),
   ];
 }
