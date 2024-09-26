@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sore_book/routes/app_route.dart';
 
 class SignInController extends GetxController {
   // Variable
@@ -48,7 +49,11 @@ class SignInController extends GetxController {
   // sign in by apple
   void signInApple() {}
   // sign up
-  void signUp() {}
+  void signUp() {
+    // go to Sign Up Pages
+    Get.toNamed(AppRoute.SIGNUP);
+  }
+
   // forgot password
   void forgotPassword() {}
 }
