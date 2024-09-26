@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 import 'package:sore_book/routes/app_route.dart';
 
 class SignInController extends GetxController {
-  // Variable
-  // global key for form
+  // Global key for form
   GlobalKey<FormState> formSignIn = GlobalKey<FormState>();
   // variable texteditingcontroller
   TextEditingController email = TextEditingController();
