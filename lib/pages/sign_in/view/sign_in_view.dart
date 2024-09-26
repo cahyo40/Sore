@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:sore_book/utils/validation/email.dart';
 import 'package:sore_book/utils/validation/password.dart';
+import 'package:sore_book/widgets/loading.dart';
 import 'package:yo_package/yo_package.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -19,6 +20,7 @@ class SignInView extends GetView<SignInController> {
       body: SafeArea(
         child: Form(
           key: controller.formSignIn,
+          onChanged: () => controller.checkActiveBtn(),
           child: ListView(
             padding: YoPadding.listview,
             children: [
@@ -91,17 +93,22 @@ class SignInView extends GetView<SignInController> {
                 ),
               ),
               YoSpace.height(size: 16),
-              Obx(
-                () => ElevatedButton(
-                  onPressed: controller.activeBtn.value
-                      ? () => controller.signIn()
-                      : null,
-                  child: Text(
-                    "Sign In",
-                    style: Get.textTheme.bodyLarge!.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+              SizedBox(
+                height: 60,
+                child: Obx(
+                  () => controller.loading.isTrue
+                      ? const YoLoading()
+                      : ElevatedButton(
+                          onPressed: controller.activeBtn.value
+                              ? () => controller.signIn()
+                              : null,
+                          child: Text(
+                            "Sign In",
+                            style: Get.textTheme.bodyLarge!.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                 ),
               ),
               YoSpace.height(size: 24),
