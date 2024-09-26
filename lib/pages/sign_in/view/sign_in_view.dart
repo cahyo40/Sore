@@ -2,6 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:sore_book/utils/validation/email.dart';
+import 'package:sore_book/utils/validation/password.dart';
 import 'package:yo_package/yo_package.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -41,6 +43,7 @@ class SignInView extends GetView<SignInController> {
               Text("Email Address", style: Get.textTheme.bodyMedium),
               YoSpace.height(),
               TextFormField(
+                validator: (value) => EmailValidator.validate(value),
                 controller: controller.email,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
@@ -54,6 +57,8 @@ class SignInView extends GetView<SignInController> {
               Obx(
                 () => TextFormField(
                   controller: controller.password,
+                  validator: (value) =>
+                      PasswordValidator.validatePassword(value),
                   obscureText: controller.obsecureText.value,
                   decoration: InputDecoration(
                     hintText: "Enter your secure password",
