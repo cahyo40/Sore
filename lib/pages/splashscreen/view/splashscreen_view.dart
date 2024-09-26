@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sore_book/pages/splashscreen/controller/splashscreen_controller.dart';
-import 'package:yo_package/yo_package.dart';
+import 'package:sore_book/utils/constants/colors.dart';
 
 import '../../../utils/constants/images.dart';
 
@@ -15,7 +15,7 @@ class SplashscreenView extends GetView<SplashscreenController> {
         child: Stack(
           children: [
             Container(
-              color: YoColors.darkGreen.background,
+              color: backgroundColor,
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -26,10 +26,7 @@ class SplashscreenView extends GetView<SplashscreenController> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     stops: const [0, 1],
-                    colors: [
-                      Colors.transparent,
-                      YoColors.darkGreen.primary.withOpacity(.5)
-                    ],
+                    colors: [Colors.transparent, primaryColor.withOpacity(.5)],
                   ),
                 ),
               ),
@@ -52,7 +49,7 @@ class SplashscreenView extends GetView<SplashscreenController> {
                   "Yo Dev\nversion 1.0",
                   textAlign: TextAlign.center,
                   style: Get.textTheme.labelMedium!.copyWith(
-                    color: YoColors.darkGreen.textColor,
+                    color: textColor,
                   ),
                 ),
               ),
