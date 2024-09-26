@@ -32,6 +32,7 @@ class MainApp extends StatelessWidget {
         cardTheme: YoCard.dark(colors: YoColors.darkGreen),
         textTheme: YoTextTheme.style(
           textTheme: GoogleFonts.aBeeZeeTextTheme(),
+          colors: YoColors.darkGreen,
         ),
       ),
       getPages: AppPages.pages,
