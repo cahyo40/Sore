@@ -1,8 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:yo_package/yo_package.dart';
 
-Color primaryColor = YoColors.darkGreen.primary;
-Color secondaryColor = YoColors.darkGreen.secondary;
-Color textColor = YoColors.darkGreen.textColor;
-Color accentColor = YoColors.darkGreen.accentColor;
-Color backgroundColor = YoColors.darkGreen.background;
+Color primaryColor = colorModel.primary;
+Color secondaryColor = colorModel.secondary;
+Color textColor = colorModel.textColor;
+Color accentColor = colorModel.accentColor;
+Color backgroundColor = colorModel.background;
+
+ColorModel colorModel = YoColors.darkGreen;
