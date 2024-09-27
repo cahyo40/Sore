@@ -62,18 +62,21 @@ class CardPopularVenue extends GetView<HomeController> {
                       right: 8,
                       child: Align(
                         alignment: Alignment.topRight,
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: textColor.withOpacity(1),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: textColor.withOpacity(1),
+                            ),
+                            child: index == 0
+                                ? Icon(
+                                    Clarity.bookmark_solid,
+                                    color: primaryColor,
+                                  )
+                                : const Icon(Clarity.bookmark_line),
                           ),
-                          child: index == 0
-                              ? Icon(
-                                  Clarity.bookmark_solid,
-                                  color: primaryColor,
-                                )
-                              : const Icon(Clarity.bookmark_line),
                         ),
                       ),
                     ),
