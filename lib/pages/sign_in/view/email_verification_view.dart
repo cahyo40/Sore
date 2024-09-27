@@ -18,7 +18,7 @@ class EmailVerificationView extends GetView<SignInController> {
         elevation: 0,
         leading: YoButtonBack(
           onPressed: () {
-            controller.signIn();
+            controller.backToSignIn();
           },
         ),
       ),
