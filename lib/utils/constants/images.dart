@@ -6,4 +6,5 @@ class ImageAssets {
   }
 
   static String logo = _imageAssets("logo.png");
+  static String venue = _imageAssets("venue.png");
 }
