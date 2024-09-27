@@ -15,91 +15,96 @@ class CardNearbyHome extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Padding(
       padding: YoPadding.spaceColumn,
-      child: Card(
-        child: SizedBox(
-          height: 120,
-          child: Row(
-            children: [
-              Container(
-                height: 120,
-                width: 120,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.fitHeight,
-                    image: AssetImage(ImageAssets.venue),
+      child: InkWell(
+        onTap: () {
+          controller.toDetailVenue();
+        },
+        child: Card(
+          child: SizedBox(
+            height: 120,
+            child: Row(
+              children: [
+                Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.fitHeight,
+                      image: AssetImage(ImageAssets.venue),
+                    ),
                   ),
                 ),
-              ),
-              Flexible(
-                child: Container(
-                  padding: YoPadding.container,
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Sport Venue $index",
-                              maxLines: 1,
-                              style: Get.textTheme.bodyLarge!.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Clarity.map_marker_solid,
-                                  color: secondaryColor,
-                                  size: 16,
+                Flexible(
+                  child: Container(
+                    padding: YoPadding.container,
+                    child: Row(
+                      children: [
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Sport Venue $index",
+                                maxLines: 1,
+                                style: Get.textTheme.bodyLarge!.copyWith(
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                YoSpace.width(),
-                                Flexible(
-                                  child: Text(
-                                    "Wonosobo, Central Java",
-                                    maxLines: 1,
-                                    style: Get.textTheme.bodySmall,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Clarity.map_marker_solid,
+                                    color: secondaryColor,
+                                    size: 16,
                                   ),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              "Basketball",
-                              style: Get.textTheme.labelSmall!.copyWith(
-                                color: textColor,
-                                fontWeight: FontWeight.bold,
+                                  YoSpace.width(),
+                                  Flexible(
+                                    child: Text(
+                                      "Wonosobo, Central Java",
+                                      maxLines: 1,
+                                      style: Get.textTheme.bodySmall,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      YoSpace.width(),
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: textColor.withOpacity(1),
-                          ),
-                          child: index == 0
-                              ? Icon(
-                                  Clarity.bookmark_solid,
-                                  color: primaryColor,
-                                  size: 16,
-                                )
-                              : const Icon(
-                                  Clarity.bookmark_line,
-                                  size: 16,
+                              Text(
+                                "Basketball",
+                                style: Get.textTheme.labelSmall!.copyWith(
+                                  color: textColor,
+                                  fontWeight: FontWeight.bold,
                                 ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        YoSpace.width(),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: textColor.withOpacity(1),
+                            ),
+                            child: index == 0
+                                ? Icon(
+                                    Clarity.bookmark_solid,
+                                    color: primaryColor,
+                                    size: 16,
+                                  )
+                                : const Icon(
+                                    Clarity.bookmark_line,
+                                    size: 16,
+                                  ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

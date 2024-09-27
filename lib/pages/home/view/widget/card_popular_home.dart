@@ -17,7 +17,9 @@ class CardPopularVenue extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        controller.toDetailVenue();
+      },
       child: SizedBox(
         width: Get.size.width * 0.8,
         height: 275,
