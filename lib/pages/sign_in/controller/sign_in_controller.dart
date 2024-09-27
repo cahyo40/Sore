@@ -39,6 +39,7 @@ class SignInController extends GetxController {
     loading.value = true;
     Future.delayed(const Duration(seconds: 2), () {
       loading.value = false;
+      Get.toNamed(AppRoute.EMAILVERIFICATION);
     });
   }
 
@@ -62,5 +63,10 @@ class SignInController extends GetxController {
         message: "Check your email",
       );
     }
+  }
+
+  // back sign in
+  void backToSignIn() {
+    Get.back();
   }
 }
