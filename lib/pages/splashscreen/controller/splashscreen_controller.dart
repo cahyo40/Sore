@@ -9,7 +9,7 @@ class SplashscreenController extends GetxController {
   void onReady() {
     log("Splash Ready");
     Future.delayed(const Duration(milliseconds: 1500), () {
-      Get.offAllNamed(AppRoute.SIGNIN);
+      Get.offAllNamed(AppRoute.HOME);
     });
   }
 }
