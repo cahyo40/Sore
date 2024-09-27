@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:sore_book/routes/app_route.dart';
 
 class HomeController extends GetxController {
   List<Map<String, dynamic>> listSport = [
@@ -28,4 +29,9 @@ class HomeController extends GetxController {
       "icon": MingCute.baseball_line,
     },
   ];
+
+  // button detail venue
+  toDetailVenue() {
+    Get.toNamed(AppRoute.DETAILVENUE);
+  }
 }
