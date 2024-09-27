@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sore_book/pages/sign_in/view/email_verification_view.dart';
 
 import '../pages/forgot_password/controller/forgot_password_binding.dart';
 import '../pages/forgot_password/view/forgot_password_view.dart';
@@ -44,6 +45,12 @@ abstract class AppPages {
       page: () => const ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
       title: "Forgot Password",
+    ),
+    GetPage(
+      name: AppRoute.EMAILVERIFICATION,
+      page: () => const EmailVerificationView(),
+      binding: SignInBinding(),
+      title: "Email Verification",
     ),
   ];
 }
