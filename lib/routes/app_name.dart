@@ -9,4 +9,5 @@ abstract class AppRoute {
   static const SIGNUP = '/sign-up';
   static const FORGOTPASSWORD = '/forgot-password';
   static const EMAILVERIFICATION = '/email-verification';
+  static const DETAILVENUE = '/detail-venue';
 }

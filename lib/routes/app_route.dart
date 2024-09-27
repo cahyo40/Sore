@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:sore_book/pages/detail_venue/controller/detail_venue_binding.dart';
+import 'package:sore_book/pages/detail_venue/view/detail_venue_view.dart';
 import 'package:sore_book/pages/sign_in/view/email_verification_view.dart';
 
 import '../pages/forgot_password/controller/forgot_password_binding.dart';
@@ -51,6 +53,12 @@ abstract class AppPages {
       page: () => const EmailVerificationView(),
       binding: SignInBinding(),
       title: "Email Verification",
+    ),
+    GetPage(
+      name: AppRoute.DETAILVENUE,
+      page: () => const DetailVenueView(),
+      binding: DetailVenueBinding(),
+      title: "Detail Venue",
     ),
   ];
 }
