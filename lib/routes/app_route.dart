@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sore_book/pages/bottom-navigation/controller/bottom_navigation_binding.dart';
 
 import '../pages/detail_venue/controller/detail_venue_binding.dart';
 import '../pages/detail_venue/view/detail_venue_view.dart';
@@ -21,7 +22,7 @@ abstract class AppPages {
     GetPage(
       name: AppRoute.HOME,
       page: () => const HomeView(),
-      binding: HomeBinding(),
+      bindings: [HomeBinding(), BottomNavigationBinding()],
       title: "Home",
     ),
     GetPage(
