@@ -14,14 +14,15 @@ class DetailVenueView extends GetView<DetailVenueController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        height: 80,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: BottomAppBar(
+        height: 120,
         color: Colors.transparent,
         child: Container(
-          height: 80,
-          width: Get.width * 0.9,
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
+            color: backgroundColor,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,33 +173,38 @@ class DetailVenueView extends GetView<DetailVenueController> {
                     ),
                   ],
                 ),
-                Row(
-                  children: [
-                    Icon(
-                      Clarity.star_solid,
-                      color: secondaryColor,
-                      size: 16,
-                    ),
-                    YoSpace.width(),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "4.6 ",
-                            style: Get.textTheme.bodyMedium,
-                          ),
-                          TextSpan(
-                            text: "150 reviews",
-                            style: Get.textTheme.bodySmall!.copyWith(
-                              color: textColor.withOpacity(.5),
-                              decoration: TextDecoration.underline,
-                              decorationColor: textColor,
-                            ),
-                          ),
-                        ],
+                InkWell(
+                  onTap: () {
+                    controller.btnShowReview();
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Clarity.star_solid,
+                        color: secondaryColor,
+                        size: 16,
                       ),
-                    ),
-                  ],
+                      YoSpace.width(),
+                      RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "4.6 ",
+                              style: Get.textTheme.bodyMedium,
+                            ),
+                            TextSpan(
+                              text: "150 reviews",
+                              style: Get.textTheme.bodySmall!.copyWith(
+                                color: textColor.withOpacity(.5),
+                                decoration: TextDecoration.underline,
+                                decorationColor: textColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 YoSpace.height(size: 16),
                 Text(
@@ -221,6 +227,9 @@ class DetailVenueView extends GetView<DetailVenueController> {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 120,
             ),
           ],
         ),
