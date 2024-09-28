@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 
 class DetailVenueController extends GetxController {
@@ -5,13 +7,27 @@ class DetailVenueController extends GetxController {
 
   // button back
   void btnBack() {
+    log("Press button back");
     Get.back();
   }
 
   // button bookmark
-  void btnBookmark() {}
+  void btnBookmark() {
+    log("Press button bookmark");
+  }
+
   // button maps
-  void btnMaps() {}
+  void btnMaps() {
+    log("Press button maps");
+  }
+
   // button booking
-  void btnBooking() {}
+  void btnBooking() {
+    log("Press button booking");
+  }
+
+  // button show review
+  void btnShowReview() {
+    log("Press button show review");
+  }
 }
