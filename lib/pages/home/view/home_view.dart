@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:sore_book/pages/bottom-navigation/view/bottom_navigation.dart';
 import 'package:sore_book/pages/home/view/widget/card_nearby_home.dart';
 import 'package:yo_package/yo_package.dart';
 
@@ -15,6 +16,8 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: const YoBottomNavigation(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: ListView(
           padding: YoPadding.listview,
@@ -197,6 +200,7 @@ class HomeView extends GetView<HomeController> {
                 return CardNearbyHome(index);
               },
             ),
+            YoSpace.height(size: 100),
           ],
         ),
       ),
