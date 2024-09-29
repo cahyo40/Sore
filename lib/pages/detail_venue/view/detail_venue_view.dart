@@ -14,7 +14,7 @@ class DetailVenueView extends GetView<DetailVenueController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: BottomAppBar(
         height: 120,
         color: Colors.transparent,
@@ -47,7 +47,7 @@ class DetailVenueView extends GetView<DetailVenueController> {
                     controller.btnBooking();
                   },
                   icon: Icon(
-                    Clarity.check_line,
+                    Clarity.date_line,
                     color: textColor,
                   ),
                   label: Text(
