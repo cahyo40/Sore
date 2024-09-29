@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../pages/booking_venue/controller/booking_venue_binding.dart';
+import '../pages/booking_venue/view/booking_order_view.dart';
 import '../pages/bottom-navigation/controller/bottom_navigation_binding.dart';
 import '../pages/detail_venue/controller/detail_venue_binding.dart';
 import '../pages/detail_venue/view/detail_venue_view.dart';
@@ -97,6 +99,12 @@ abstract class AppPages {
       page: () => const DetailVenueView(),
       binding: DetailVenueBinding(),
       title: "Detail Venue",
+    ),
+    GetPage(
+      name: AppRoute.BOOKINGVENUE,
+      page: () => const BookingVenueView(),
+      binding: BookingVenueBinding(),
+      title: "Booking Venue",
     ),
   ];
 }
