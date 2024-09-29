@@ -14,11 +14,11 @@ class BottomNavigationController extends GetxController {
     ),
     ItemBottomNavModel(
         icon: Clarity.list_line,
-        title: "History",
+        title: "Order",
         iconActive: Clarity.list_solid),
     ItemBottomNavModel(
         icon: Clarity.chat_bubble_line,
-        title: "History",
+        title: "Message",
         iconActive: Clarity.chat_bubble_solid),
     ItemBottomNavModel(
         icon: Clarity.notification_line,
