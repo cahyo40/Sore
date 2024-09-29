@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:sore_book/routes/app_route.dart';
 
 class DetailVenueController extends GetxController {
   //Button function
@@ -24,6 +25,7 @@ class DetailVenueController extends GetxController {
   // button booking
   void btnBooking() {
     log("Press button booking");
+    Get.toNamed(AppRoute.BOOKINGVENUE);
   }
 
   // button show review
