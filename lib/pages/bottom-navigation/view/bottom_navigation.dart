@@ -29,3 +29,35 @@ class YoBottomNavigation extends GetView<BottomNavigationController> {
     );
   }
 }
+
+class YoBottomNavigationBarLayout extends GetView<BottomNavigationController> {
+  final AppBar? appBar;
+  final Widget? body;
+  const YoBottomNavigationBarLayout({
+    required this.body,
+    this.appBar,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar ??
+          const PreferredSize(
+            preferredSize: Size.fromHeight(0),
+            child: SizedBox(),
+          ),
+      floatingActionButton: const YoBottomNavigation(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      body: SafeArea(
+        child: body ??
+            Center(
+              child: Text(
+                "Wrong Page",
+                style: Get.textTheme.headlineMedium,
+              ),
+            ),
+      ),
+    );
+  }
+}

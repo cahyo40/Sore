@@ -4,6 +4,6 @@ import 'package:sore_book/pages/bottom-navigation/controller/bottom_navigation_c
 class BottomNavigationBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<BottomNavigationController>(() => BottomNavigationController());
+    Get.put(BottomNavigationController(), permanent: true);
   }
 }
