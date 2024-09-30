@@ -42,6 +42,7 @@ class YoBottomNavigationBarLayout extends GetView<BottomNavigationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: appBar ??
           const PreferredSize(
             preferredSize: Size.fromHeight(0),
