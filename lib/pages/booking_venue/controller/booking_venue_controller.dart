@@ -30,14 +30,14 @@ class BookingVenueController extends GetxController {
   bool isSelectedTime(String time) => selectedTime.value == time;
   // reset selected time
   void resetTime() => selectedTime.value = null;
-
+// list bookings time
   List<String> bookingList = [
     "10:00",
     "20:00",
     "17:00",
   ];
-
+// check booking's time
   bool bookingTime(String time) => bookingList.contains(time);
-
+// check value
   bool blankDateTime() => selectedTime.value == null;
 }
