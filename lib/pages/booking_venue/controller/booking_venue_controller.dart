@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:sore_book/routes/app_route.dart';
 import 'package:sore_book/utils/helpers/date.dart';
 
 class BookingVenueController extends GetxController {
@@ -41,5 +42,8 @@ class BookingVenueController extends GetxController {
 // check value
   bool blankDateTime() => selectedTime.value == null;
 // function for btn confirm
-  btnConfirm() {}
+  btnConfirm() {
+    log("Press Button Confirm");
+    Get.toNamed(AppRoute.BOOKINGCONFIRMATION);
+  }
 }
