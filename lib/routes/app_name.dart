@@ -15,4 +15,6 @@ abstract class AppRoute {
   static const NOTIFICATION = '/notification';
   static const PROFILE = '/profile';
   static const BOOKINGVENUE = '/booking-venue';
+  static const BOOKINGCONFIRMATION = '/booking-confirmation';
+  static const BOOKINGSUCCESS = '/booking-success';
 }

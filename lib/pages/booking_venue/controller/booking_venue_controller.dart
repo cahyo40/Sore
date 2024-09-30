@@ -40,4 +40,6 @@ class BookingVenueController extends GetxController {
   bool bookingTime(String time) => bookingList.contains(time);
 // check value
   bool blankDateTime() => selectedTime.value == null;
+// function for btn confirm
+  btnConfirm() {}
 }

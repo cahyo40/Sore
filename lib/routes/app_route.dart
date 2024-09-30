@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import 'package:sore_book/pages/booking_confirmation/controller/booking_confirmation_binding.dart';
+import 'package:sore_book/pages/booking_confirmation/view/booking_confirmation_view.dart';
+import 'package:sore_book/pages/booking_confirmation/view/booking_success_view.dart';
 
 import '../pages/booking_venue/controller/booking_venue_binding.dart';
 import '../pages/booking_venue/view/booking_order_view.dart';
@@ -105,6 +108,18 @@ abstract class AppPages {
       page: () => const BookingVenueView(),
       binding: BookingVenueBinding(),
       title: "Booking Venue",
+    ),
+    GetPage(
+      name: AppRoute.BOOKINGCONFIRMATION,
+      page: () => const BookingConfirmationView(),
+      binding: BookingConfirmationBinding(),
+      title: "Booking Confirmation",
+    ),
+    GetPage(
+      name: AppRoute.BOOKINGSUCCESS,
+      page: () => const BookingSuccessView(),
+      binding: BookingConfirmationBinding(),
+      title: "Booking Success",
     ),
   ];
 }

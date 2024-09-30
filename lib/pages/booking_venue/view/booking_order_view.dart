@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:sore_book/pages/booking_venue/controller/booking_venue_controller.dart';
 import 'package:sore_book/utils/helpers/date.dart';
+import 'package:sore_book/widgets/back_button.dart';
 import 'package:yo_package/yo_package.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -15,57 +16,67 @@ class BookingVenueView extends GetView<BookingVenueController> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: BottomAppBar(
-        height: 120,
-        color: Colors.transparent,
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: backgroundColor,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Obx(
-                  () => controller.blankDateTime()
-                      ? const SizedBox()
-                      : Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "${DateHelper.formatDateAlternative(controller.selectedDate.value)} : ${controller.selectedTime.value}",
-                              style: Get.textTheme.bodyMedium,
-                            ),
-                            YoSpace.height(size: 4),
-                            Text(
-                              "Rp. 300.000",
-                              style: Get.textTheme.titleLarge,
-                            ),
-                          ],
+      floatingActionButton: Obx(
+        () => AnimatedCrossFade(
+          firstChild: BottomAppBar(
+            height: 120,
+            color: Colors.transparent,
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: backgroundColor,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "${DateHelper.formatDateAlternative(controller.selectedDate.value)} : ${controller.selectedTime.value}",
+                          style: Get.textTheme.bodyMedium,
                         ),
-                ),
+                        YoSpace.height(size: 4),
+                        Text(
+                          "Rp. 300.000",
+                          style: Get.textTheme.titleLarge,
+                        ),
+                      ],
+                    ),
+                  ),
+                  YoSpace.width(),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      controller.btnConfirm();
+                    },
+                    icon: Icon(
+                      Clarity.check_line,
+                      color: textColor,
+                    ),
+                    label: Text(
+                      "Confirm",
+                      style: Get.textTheme.bodySmall,
+                    ),
+                  ),
+                ],
               ),
-              YoSpace.width(),
-              ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(
-                  Clarity.check_line,
-                  color: textColor,
-                ),
-                label: Text(
-                  "Confirm",
-                  style: Get.textTheme.bodySmall,
-                ),
-              ),
-            ],
+            ),
           ),
+          secondChild: const SizedBox(),
+          crossFadeState: controller.blankDateTime()
+              ? CrossFadeState.showSecond
+              : CrossFadeState.showFirst,
+          duration: const Duration(milliseconds: 300),
+          firstCurve: Curves.bounceIn,
+          secondCurve: Curves.bounceOut,
         ),
       ),
       appBar: AppBar(
         title: const Text('Booking'),
+        leading: const YoButtonBack(),
       ),
       body: SafeArea(
         child: ListView(
