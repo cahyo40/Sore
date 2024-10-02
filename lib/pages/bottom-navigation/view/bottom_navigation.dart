@@ -41,17 +41,17 @@ class YoBottomNavigationBarLayout extends GetView<BottomNavigationController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: appBar ??
-          const PreferredSize(
-            preferredSize: Size.fromHeight(0),
-            child: SizedBox(),
-          ),
-      floatingActionButton: const YoBottomNavigation(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: SafeArea(
-        child: body ??
+    return SafeArea(
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: appBar ??
+            const PreferredSize(
+              preferredSize: Size.fromHeight(0),
+              child: SizedBox(),
+            ),
+        floatingActionButton: const YoBottomNavigation(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        body: body ??
             Center(
               child: Text(
                 "Wrong Page",
