@@ -19,6 +19,7 @@ class BottomNavItem extends GetView<BottomNavigationController> {
         },
         child: AnimatedCrossFade(
           firstChild: SizedBox(
+            height: 55,
             width: (Get.size.width - 64) / 5,
             child: Icon(
               model.iconActive,
