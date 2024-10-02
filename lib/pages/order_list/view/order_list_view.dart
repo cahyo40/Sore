@@ -107,6 +107,7 @@ class OrderListView extends GetView<OrderListController> {
                 return CardOrderItem(model: model);
               },
             ),
+            YoSpace.height(size: 85),
           ],
         ),
       ),
