@@ -197,6 +197,7 @@ class HomeView extends GetView<HomeController> {
               return CardNearbyHome(index);
             },
           ),
+          YoSpace.height(size: 85),
         ],
       ),
     );
