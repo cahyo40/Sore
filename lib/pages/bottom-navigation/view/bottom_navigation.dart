@@ -51,20 +51,13 @@ class YoBottomNavigationBarLayout extends GetView<BottomNavigationController> {
       floatingActionButton: const YoBottomNavigation(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: body ??
-                  Center(
-                    child: Text(
-                      "Wrong Page",
-                      style: Get.textTheme.headlineMedium,
-                    ),
-                  ),
+        child: body ??
+            Center(
+              child: Text(
+                "Wrong Page",
+                style: Get.textTheme.headlineMedium,
+              ),
             ),
-            YoSpace.height(size: 85),
-          ],
-        ),
       ),
     );
   }
