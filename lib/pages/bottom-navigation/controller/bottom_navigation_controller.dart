@@ -65,10 +65,13 @@ class BottomNavigationController extends GetxController {
   RxInt currPage = 0.obs;
   // function for change Page
   void changePage(int index) {
-    log("Change Page $index");
-    currPage.value = index;
-    // Get.put(itemBottomNav[index].controller);
-    Get.offAllNamed(itemBottomNav[index].appRoute);
+    if (index == currPage.value) {
+    } else {
+      log("Change Page $index");
+      currPage.value = index;
+      // Get.put(itemBottomNav[index].controller);
+      Get.offAllNamed(itemBottomNav[index].appRoute);
+    }
   }
 
   // check active button
